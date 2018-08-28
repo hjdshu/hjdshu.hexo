@@ -10,3 +10,9 @@ hexo server
 hexo new [layout] <title>
 
 ```
+
+### 发布静态页面
+```
+hexo generate
+
+```
