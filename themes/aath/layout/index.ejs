@@ -1,6 +1,7 @@
 <main id='index'>
   <div class="posts-list">
     <% page.posts.forEach(post => {%>
+      <% if (!post.notshow) {%>
       <section>
         <a href="<%- url_for(post.path) %>">
           <h3 class='post-head'>
@@ -42,6 +43,7 @@
           <% } %>
         </div>
       </section>
+      <%}%>
     <%})%>
   </div>
   <aside>
