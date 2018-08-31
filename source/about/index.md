@@ -3,6 +3,6 @@ layout: about
 title: 关于
 ---
 
-> 哇，来日方长
+> 我们会成为我们想做的人。
 
 地址: chengdu, china

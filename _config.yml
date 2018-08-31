@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: ForMINI-各种疑难杂症
+title: Do Whatever You Want
 subtitle:
 description:
 keywords:
@@ -80,8 +80,8 @@ deploy:
 # Comment
 ## disqus
 ## livere
-disqus_shortname: your_disqus_shortname
-livere_uid: your_livere_uid
+## disqus_shortname: your_disqus_shortname
+## livere_uid: your_livere_uid
 
 # favicon
 favicon: /favicon.ico
