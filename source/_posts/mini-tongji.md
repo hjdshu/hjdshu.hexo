@@ -3,7 +3,9 @@ title: 小程序 - 启动统计/来源统计
 date: 2018-07-27 17:16:15
 categories: 小程序
 tags: 小程序
+author: Jake
 ---
+
 #### 一、场景
 > 场景是给外部小程序导流量，发现我们出去的量(点击事件UV)跟对方拿到的量(来源统计UV)差异很大, 对方称在【app onShow】里上报的事件统计。 
 
@@ -11,7 +13,7 @@ tags: 小程序
 
 > 自测微信API上报事件来源统计:  APP生命周期上报【 app:onShow】上报统计量(uv)为A， 跟 页面的生命周期 (测试页面为首页)) 【page: onReady】 上报统计量(uv)定义为B,  如果按期预期A应该约等于B， 但是实测 B ~= 4*A， 数据相差4倍。
 
-```
+``` javascript
 onShow (options) {
   let sourceQuery = options.query.custom_source
   if (sourceQuery && sourceQuery !== 'undefined') {
@@ -33,7 +35,7 @@ onShow (options) {
 
 > 发现线上错误日志：app:onshow :  app.aldstat.sendEvent(阿拉丁的统计方法) 错误,  怀疑app.aldstat在apponshow的时候还没初始化, 于是做了一个延迟上报处理
 
-  ``` 
+  ``` javascript
    setTimeout(() => {
       let app = getApp()
       app.aldstat.sendEvent('普通来源show-' + sourceQuery, '来源')
@@ -45,10 +47,10 @@ onShow (options) {
 > 经过验证，困扰许久的问题，解决了。另外阿拉丁数据延迟俩小时
 > 延迟1秒上报数据为确保数据更加准确
 
-```
+``` javascript
 onShow (options) {
   let sourceQuery = options.query.custom_source
-  if (sourceQuery && sourceQuery !== 'undefined') {
+  if (sourceQuery) {
     setTimeout(() => {
       // 微信自定义事件分析统计
       wx.reportAnalytics('track_source', {

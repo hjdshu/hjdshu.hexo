@@ -7,7 +7,7 @@ tags: 小程序
 
 ### 一、原生tabbar配置
 
-```
+``` javascript
   config: {
     pages: ['pages/index/index', 'pages/me/me'], //配置在tabbar的页面必须要在pages里
     tabBar: {

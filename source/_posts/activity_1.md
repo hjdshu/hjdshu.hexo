@@ -13,7 +13,7 @@ notshow: true
 #### 二、数据表结构
 1. 用户记录表: 记录用户的能量，运动等数据
 2. 学校记录表: 学校是可以后台动态创建的，记录学校的相关信息
-```
+``` javascript
   dbMongoose.Schema({
       id:{type:String,index:true},
       img:String,
@@ -29,7 +29,7 @@ notshow: true
   });
 ```
 3. 书籍记录表: 书籍也可以后台动态创建，记录书籍的被捐赠数据等
-```
+``` javascript
  dbMongoose.Schema({
     id:{type:String,index:true},
     name:String,
@@ -43,7 +43,7 @@ notshow: true
   })
 ```
 4. 捐赠记录表: 包含了学校+书籍+数量等主要信息
-```
+``` javascript
 dbMongoose.Schema({
     school:String,
     school_name:String,

@@ -5,7 +5,7 @@ date: 2018-08-07 17:48:25
 
 ### 1.Promise
 #### 1.1 promise的基本用法
-```
+``` javascript
 const task1 = (start) => {
   return new Promise((resolve, reject) => {
     let A = start
@@ -50,12 +50,12 @@ const task3 = (result) => {
 ```
 
 #### 1.2 利用promise的链式调用来解决回调问题
-```
+``` javascript
 task1(1).then(task2).then(task3).then((result)=>{console.log(result)}).catch((err)=>{console.log(err)})
 ```
 
 #### 1.3 【终极写法】利用async, awit解决回调问题
-```
+``` javascript
 async function foo(start, call) {
   let a = await task1 (start)
   let b = await task2 (a)

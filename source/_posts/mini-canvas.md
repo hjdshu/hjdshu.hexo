@@ -11,7 +11,7 @@ tags: 小程序
 
 #### 小程序canvas的绘制注意事项
 1. 适配: 绘制图片之前，先要搞清楚当前机器的真实尺寸，计算出单位标准
-```
+``` javascript
   //获取当前机器的尺寸
   let imageWidth = wx.getSystemInfoSync().windowWidth 
   let bil = imageWidth / 375 //拿到单位bil

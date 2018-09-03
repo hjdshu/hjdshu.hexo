@@ -3,6 +3,9 @@
     <article>
         <section class="content markdown-body">
           <h1><%= page.title ? page.title : __('untitled') %></h1>
+          <% if(page.author) { %>
+          <div class="post-meta">作者：<%= page.author %></div>
+          <%}%>
           <div class='post-meta'>
             <i class="fa fa-calendar" aria-hidden="true"></i> <time><%-date(page.date, __('date_format'))%></time>
             <% if(page.categories && page.categories.length) { %>
